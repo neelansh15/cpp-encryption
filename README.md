@@ -1,7 +1,7 @@
 # Encryption in C++, as basic as can be
 
 ## Compile
-1. MacOS: The binary for MacOS is already compiled using clang as `./main`
+1. macOS: The binary for macOS is already compiled using clang as `./main`
 2. Windows: Compile `main.cpp` with gcc or similar
 
 ## Running
