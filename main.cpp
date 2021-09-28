@@ -14,7 +14,7 @@ class encryption{
         void decrypt();
 
         encryption(string input_filename, string output_filename){
-            input_file = input_filename;`
+            input_file = input_filename;
             output_file = output_filename;
         }
     
