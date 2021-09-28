@@ -1,3 +1,0 @@
-This is a file
-that I would like to encrypt,
-which spans multiple lines!
