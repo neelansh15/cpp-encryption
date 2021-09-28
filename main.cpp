@@ -7,13 +7,15 @@ class encryption{
     int key;
     char c;
     string input_file;
+    string output_file;
 
     public:
         void encrypt();
         void decrypt();
 
-        encryption(string filename){
-            input_file = filename;
+        encryption(string input_filename, string output_filename){
+            input_file = input_filename;
+            output_file = output_filename;
         }
     
 };
@@ -25,7 +27,7 @@ void encryption::encrypt(){
     fstream fin, fout;
 
     fin.open(input_file, fstream::in);
-    fout.open("encrypt.txt", fstream::out);
+    fout.open(output_file, fstream::out);
 
     while(fin >> noskipws >> c){
         int temp = (c + key);
@@ -43,7 +45,7 @@ void encryption::decrypt(){
     fstream fin, fout;
 
     fin.open(input_file, fstream::in);
-    fout.open("decrypt.txt", fstream::out);
+    fout.open(output_file, fstream::out);
 
     while(fin >> noskipws >> c){
         int temp = (c - key);
@@ -59,9 +61,10 @@ int main(int argc, char **argv){
     cout << "Neelansh's Encryption Suite" << endl;
 
     string type = argv[1];
-    string filename = argv[2];
+    string input_filename = argv[2];
+    string output_filename = argv[3];
 
-    encryption enc(filename);
+    encryption enc(input_filename, output_filename);
 
     if(type == "encrypt"){
         enc.encrypt();
